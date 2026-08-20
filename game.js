@@ -1,6 +1,7 @@
 const cells = document.querySelectorAll('.cell');
 const statusEl = document.getElementById('status');
 const restartBtn = document.getElementById('restart');
+const resetBtn = document.getElementById('reset');
 const scoreX = document.getElementById('score-x');
 const scoreO = document.getElementById('score-o');
 const scoreDraw = document.getElementById('score-draw');
@@ -67,5 +68,14 @@ function restart() {
   statusEl.textContent = `תור השחקן: ${getSymbol(currentPlayer)}`;
 }
 
+function reset() {
+  scores = { X: 0, O: 0, draw: 0 };
+  scoreX.textContent = scores.X;
+  scoreO.textContent = scores.O;
+  scoreDraw.textContent = scores.draw;
+  restart();
+}
+
 cells.forEach(cell => cell.addEventListener('click', handleClick));
 restartBtn.addEventListener('click', restart);
+resetBtn.addEventListener('click', reset);
