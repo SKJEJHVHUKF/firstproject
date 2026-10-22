@@ -3,31 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1a2e">
   <title>איקס עיגול</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <main class="container">
     <h1>איקס עיגול</h1>
-    <div class="status" id="status">תור השחקן: ❌</div>
-    <div class="board" id="board">
-      <div class="cell" data-index="0"></div>
-      <div class="cell" data-index="1"></div>
-      <div class="cell" data-index="2"></div>
-      <div class="cell" data-index="3"></div>
-      <div class="cell" data-index="4"></div>
-      <div class="cell" data-index="5"></div>
-      <div class="cell" data-index="6"></div>
-      <div class="cell" data-index="7"></div>
-      <div class="cell" data-index="8"></div>
+    <p class="status" id="status" role="status" aria-live="polite">תור השחקן: ❌</p>
+    <div class="board" id="board" role="grid" aria-label="לוח המשחק">
+      <div class="row" role="row">
+        <button class="cell" type="button" role="gridcell" data-index="0" aria-label="שורה 1, עמודה 1, ריק"></button>
+        <button class="cell" type="button" role="gridcell" data-index="1" aria-label="שורה 1, עמודה 2, ריק"></button>
+        <button class="cell" type="button" role="gridcell" data-index="2" aria-label="שורה 1, עמודה 3, ריק"></button>
+      </div>
+      <div class="row" role="row">
+        <button class="cell" type="button" role="gridcell" data-index="3" aria-label="שורה 2, עמודה 1, ריק"></button>
+        <button class="cell" type="button" role="gridcell" data-index="4" aria-label="שורה 2, עמודה 2, ריק"></button>
+        <button class="cell" type="button" role="gridcell" data-index="5" aria-label="שורה 2, עמודה 3, ריק"></button>
+      </div>
+      <div class="row" role="row">
+        <button class="cell" type="button" role="gridcell" data-index="6" aria-label="שורה 3, עמודה 1, ריק"></button>
+        <button class="cell" type="button" role="gridcell" data-index="7" aria-label="שורה 3, עמודה 2, ריק"></button>
+        <button class="cell" type="button" role="gridcell" data-index="8" aria-label="שורה 3, עמודה 3, ריק"></button>
+      </div>
     </div>
-    <div class="score">
-      <div class="score-box">❌ <span id="score-x">0</span></div>
-      <div class="score-box">תיקו <span id="score-draw">0</span></div>
-      <div class="score-box">⭕ <span id="score-o">0</span></div>
+    <div class="score" aria-label="ניקוד">
+      <div class="score-box"><span class="score-label">❌</span> <span id="score-x">0</span></div>
+      <div class="score-box"><span class="score-label">תיקו</span> <span id="score-draw">0</span></div>
+      <div class="score-box"><span class="score-label">⭕</span> <span id="score-o">0</span></div>
     </div>
-    <button class="btn" id="restart">משחק חדש</button>
-  </div>
+    <button class="btn" type="button" id="restart">משחק חדש</button>
+  </main>
   <script src="game.js"></script>
 </body>
 </html>
